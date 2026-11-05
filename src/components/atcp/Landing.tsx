@@ -220,7 +220,7 @@ export function Landing() {
             <h1 className="h1">Win 1-on-1 Coaching With a 7-Figure Tree Service Owner</h1>
             <p className="p">
               Learn directly from the people who have already built the business you’re trying to
-              build. No generic advice. No guessing. Four winners, a $1,000 session each, and $0 to
+              build. No generic advice. No guessing. Four winners, a private session each, and $0 to
               enter.
             </p>
             <div className="coachrow">
@@ -245,7 +245,7 @@ export function Landing() {
               </div>
               <div>
                 <small>Session</small>
-                <span>60-min 1-on-1 video call</span>
+                <span>Private 60-min 1-on-1 video call</span>
               </div>
             </div>
           </div>

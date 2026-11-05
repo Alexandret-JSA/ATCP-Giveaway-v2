@@ -52,8 +52,7 @@ function validate(v: Values): string | null {
     return "Please enter your ATCP membership email.";
   if (!v.facebook_name.trim()) return "Please enter your Facebook profile or group member name.";
   if (!v.fb_group_member) return "Please tell us whether you are in the ATCP Facebook group.";
-  if (v.fb_group_member === "Yes" && !v.fb_group_confirmed)
-    return "Please confirm your ATCP Facebook group membership.";
+  if (!v.fb_group_confirmed) return "Please confirm your ATCP Facebook group membership.";
   if (!v.masterclass_topic.trim()) return "Please tell us what you would like to discuss.";
   return null;
 }
@@ -279,20 +278,18 @@ export function EntryFormV2({ anchorId, prefix }: { anchorId: string; prefix: st
             ))}
           </select>
         </Field>
-        {v.fb_group_member === "Yes" ? (
-          <label className="f-check" htmlFor={id("fbconfirm")}>
-            <input
-              id={id("fbconfirm")}
-              type="checkbox"
-              name="fb_group_confirmed"
-              checked={v.fb_group_confirmed}
-              onChange={(e) => set("fb_group_confirmed", e.target.checked)}
-            />
-            <span>
-              I confirm my ATCP Facebook group membership <b>*</b>
-            </span>
-          </label>
-        ) : null}
+        <label className="f-check" htmlFor={id("fbconfirm")}>
+          <input
+            id={id("fbconfirm")}
+            type="checkbox"
+            name="fb_group_confirmed"
+            checked={v.fb_group_confirmed}
+            onChange={(e) => set("fb_group_confirmed", e.target.checked)}
+          />
+          <span>
+            I confirm my ATCP Facebook group membership <b>*</b>
+          </span>
+        </label>
         <Field
           id={id("topic")}
           label="What would you like to discuss during the personalized masterclass?"
