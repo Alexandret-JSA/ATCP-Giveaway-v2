@@ -109,7 +109,7 @@ export function buildCustomFields(values: Partial<Record<CrmFieldName, string | 
   const out: Record<string, { value: string; label: string }> = {};
   for (const [name, id] of Object.entries(CRM_FIELD_IDS)) {
     const v = values[name as CrmFieldName];
-    if (v) out[id] = { value: v, label: name };
+    if (v && id) out[id] = { value: v, label: name };
   }
   return out;
 }

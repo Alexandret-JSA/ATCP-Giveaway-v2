@@ -4,12 +4,16 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import atcpCss from "../styles/atcp.css?url";
+import { Gtm } from "../components/atcp/Gtm";
+import { pushEvent } from "../lib/datalayer";
 import { reportVibeError } from "../lib/vibe-error-reporting";
 import { captureAttribution } from "../lib/tracking";
 
@@ -91,6 +95,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "stylesheet", href: atcpCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -121,8 +132,26 @@ function RootComponent() {
     captureAttribution();
   }, []);
 
+  // One `page_view` dataLayer event per page (including client-side navigations).
+  // In GTM, trigger the Meta Pixel PageView tag on this custom event, NOT on "All Pages",
+  // otherwise the first page would be counted twice.
+  const pathname = useRouterState({ select: (st) => st.location.pathname });
+  const lastPushed = useRef<string | null>(null);
+  useEffect(() => {
+    // React dev mode runs effects twice: never push the same page twice in a row.
+    if (lastPushed.current === pathname) return;
+    lastPushed.current = pathname;
+    pushEvent({
+      event: "page_view",
+      page_path: pathname,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }, [pathname]);
+
   return (
     <QueryClientProvider client={queryClient}>
+      <Gtm />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>

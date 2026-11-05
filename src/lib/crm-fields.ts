@@ -19,6 +19,14 @@ export const CRM_FIELD_IDS = {
   os: "jTKLDPz9iM7Kv3Iu5p6f",
   google_click_id: "d4jYBDLqOm41NVjJTJjX",
   visitor_timezone: "U6ieKftRmVzR0LruJYyb",
+  // Form questions (non-standard). EMPTY until AI Studio registers them: while empty, the answer is
+  // NOT sent to the CRM (buildCustomFields skips it). Paste the id the moment you have it.
+  atcp_member: "",
+  atcp_membership_email: "",
+  facebook_name: "",
+  fb_group_confirmed: "",
+  fb_group_member: "",
+  masterclass_topic: "",
 } as const;
 
 export type CrmFieldName = keyof typeof CRM_FIELD_IDS;
