@@ -10,17 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as LeadRouteImport } from './routes/lead'
 import { Route as ThankYouRouteImport } from './routes/thank-you'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LeadRoute = LeadRouteImport.update({
-  id: '/lead',
-  path: '/lead',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ThankYouRoute = ThankYouRouteImport.update({
@@ -31,31 +25,27 @@ const ThankYouRoute = ThankYouRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/lead': typeof LeadRoute
   '/thank-you': typeof ThankYouRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/lead': typeof LeadRoute
   '/thank-you': typeof ThankYouRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/lead': typeof LeadRoute
   '/thank-you': typeof ThankYouRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/lead' | '/thank-you'
+  fullPaths: '/' | '/thank-you'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/lead' | '/thank-you'
-  id: '__root__' | '/' | '/lead' | '/thank-you'
+  to: '/' | '/thank-you'
+  id: '__root__' | '/' | '/thank-you'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  LeadRoute: typeof LeadRoute
   ThankYouRoute: typeof ThankYouRoute
 }
 
@@ -66,13 +56,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/lead': {
-      id: '/lead'
-      path: '/lead'
-      fullPath: '/lead'
-      preLoaderRoute: typeof LeadRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/thank-you': {
@@ -87,7 +70,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  LeadRoute: LeadRoute,
   ThankYouRoute: ThankYouRoute,
 }
 export const routeTree = rootRouteImport
