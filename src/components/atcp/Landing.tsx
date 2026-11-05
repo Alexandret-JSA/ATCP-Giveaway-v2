@@ -390,8 +390,8 @@ export function Landing() {
               <span className="n">3</span>
               <h3 className="h3">Pick Your Coach and Meet</h3>
               <p className="p">
-                Winners choose their coach in draw order. Sessions start Friday, November 20 on a
-                live video call.
+                Winners choose their coach in draw order. The winner selects a time based on
+                availability.
               </p>
             </div>
           </div>

@@ -276,7 +276,7 @@ export function EntryForm({ anchorId, prefix }: { anchorId: string; prefix: stri
           </p>
         ) : null}
         <button className="btn" type="submit" disabled={submitting}>
-          {submitting ? "Submitting..." : "Submit"}
+          {submitting ? "Submitting..." : "ENTER TO WIN"}
         </button>
       </form>
       <p className="micro reassure">
