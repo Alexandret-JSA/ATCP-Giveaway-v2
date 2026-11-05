@@ -62,3 +62,19 @@ properties { deviceType, source: "ai_studio", projectId, formName }
    Browser-side anti-spam (honeypot, time check) only reduces noise; it is not protection. Track this as a risk.
 5. **This helper does not send Pixel or CAPI events.** Tracking (Pixel + server CAPI with the same `event_id`) is
    our own layer, added next to the `postTrackingEvent` call. See the SOP, sections 4-6.
+
+## Registered custom fields (2026-11-05)
+
+Ids live in `src/lib/crm-fields.ts`. Registered by AI Studio's AI, text type:
+`fbp`, `fbc`, `event_id`, `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`,
+`landing_page`, `referrer`, `device_type`, `os`.
+
+**Standard CRM fields, NOT registrable** (registration returned a 400 / is refused): `gclid` and `timezone`.
+They must go in `formData` under their standard keys. **Open item:** confirm the exact standard key
+names with AI Studio's AI before sending them (a wrong key may be ignored, or could reject the event).
+
+## Client helpers (our code, safe to edit)
+
+- `src/lib/tracking.ts`: first-touch attribution (`captureAttribution`, called once from `__root.tsx`),
+  `getAttribution()`, device parsing (`parseDevice`, iPadOS-aware), `newEventId()`, `buildCustomFields()`.
+- `src/lib/crm-fields.ts`: the id map.

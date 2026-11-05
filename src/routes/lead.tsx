@@ -3,6 +3,7 @@ import { useState, type FormEvent } from "react";
 import { toast } from "sonner";
 
 import { buildTrackingPayload, postTrackingEvent } from "@/lib/crm-tracking";
+import { buildCustomFields, getAttribution, newEventId } from "@/lib/tracking";
 
 export const Route = createFileRoute("/lead")({
   component: LeadForm,
@@ -65,7 +66,25 @@ function LeadForm() {
       phone: "Phone",
     });
 
-    postTrackingEvent(payload);
+    // Attribution + device info travel as registered custom fields (ids in src/lib/crm-fields.ts).
+    // gclid and timezone are standard CRM fields: added once their exact keys are confirmed.
+    const attr = getAttribution();
+    const customFields = buildCustomFields({
+      fbp: attr.fbp,
+      fbc: attr.fbc,
+      event_id: newEventId(),
+      utm_source: attr.utm_source,
+      utm_medium: attr.utm_medium,
+      utm_campaign: attr.utm_campaign,
+      utm_content: attr.utm_content,
+      utm_term: attr.utm_term,
+      landing_page: attr.landing_page,
+      referrer: attr.referrer,
+      device_type: attr.device_type,
+      os: attr.os,
+    });
+
+    postTrackingEvent(payload, { customFields });
 
     toast.success("Thanks for entering! We'll be in touch.");
     setForm({ first_name: "", last_name: "", email: "", phone: "" });
