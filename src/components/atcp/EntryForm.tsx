@@ -95,7 +95,7 @@ export function EntryForm({ anchorId, prefix }: { anchorId: string; prefix: stri
     // Bots: filled honeypot or an impossibly fast submit. Pretend success, send nothing.
     const tooFast = openedAt.current > 0 && Date.now() - openedAt.current < 2000;
     if (website || tooFast) {
-      void navigate({ to: "/thank-you" });
+      void navigate({ to: "/thank-you", search: { email: v.email.trim() } });
       return;
     }
 
@@ -161,7 +161,7 @@ export function EntryForm({ anchorId, prefix }: { anchorId: string; prefix: stri
       },
     }).catch(() => {});
 
-    void navigate({ to: "/thank-you" });
+    void navigate({ to: "/thank-you", search: { email: v.email.trim() } });
   };
 
   return (

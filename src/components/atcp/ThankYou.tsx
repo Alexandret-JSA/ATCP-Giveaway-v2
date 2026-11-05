@@ -1,7 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState, type FormEvent } from "react";
+import { getRouteApi } from "@tanstack/react-router";
 
 import { Footer, Icon } from "@/components/atcp/Shared";
-import { GROUP_URL, NEWS_URL } from "@/lib/event-config";
+import { buildTrackingPayload, postTrackingEvent } from "@/lib/crm-tracking";
+import { GROUP_URL } from "@/lib/event-config";
+
+const routeApi = getRouteApi("/thank-you");
+
+const SUB_FORM_ID = "atcp-newsletter-subscribe";
+const SUB_FORM_NAME = "ATCP Newsletter Subscribe";
 
 /**
  * Android outside Facebook's own browser: open the group in the Facebook app instead of a browser
@@ -26,6 +33,25 @@ function useGroupLink() {
 
 export function ThankYou() {
   useGroupLink();
+  const { email: initialEmail } = routeApi.useSearch();
+  const [subEmail, setSubEmail] = useState(initialEmail);
+  const [subscribed, setSubscribed] = useState(false);
+
+  const onSubscribe = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (subscribed) return;
+    const value = subEmail.trim();
+    if (!value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return;
+    const payload = buildTrackingPayload(
+      SUB_FORM_ID,
+      SUB_FORM_NAME,
+      { email: value },
+      { email: "Email" },
+    );
+    postTrackingEvent(payload);
+    setSubscribed(true);
+  };
+
   return (
     <div className="ty">
       <section className="hero">
@@ -123,15 +149,26 @@ export function ThankYou() {
                 <h2 className="h3">Get ATCP News in Your Inbox</h2>
                 <p className="p">
                   New regulations, safety standards and industry updates can affect your business.
-                  We’ll send timely, credible news to the email you entered: safety alerts and
-                  compliance updates, advocacy news, and policy changes that impact arboriculture.
+                  We’ll send timely, credible news to the email you entered.
                 </p>
-              </div>
-              <div className="act">
-                <a className="btn" href={NEWS_URL} target="_blank" rel="noopener noreferrer">
-                  Read the Latest News
-                </a>
-                <span className="note">Unsubscribe anytime.</span>
+                <form className="sub" onSubmit={onSubscribe}>
+                  <div className="sub-field">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="email"
+                      aria-label="Email"
+                      value={subEmail}
+                      onChange={(e) => setSubEmail(e.target.value)}
+                    />
+                    <button className="btn" type="submit" disabled={subscribed}>
+                      {subscribed ? "Subscribed" : "Subscribe"}
+                    </button>
+                  </div>
+                  <span className="note">
+                    {subscribed ? "You’re on the list." : "Unsubscribe anytime."}
+                  </span>
+                </form>
               </div>
             </div>
           </div>
