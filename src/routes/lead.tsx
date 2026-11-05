@@ -61,23 +61,14 @@ function LeadForm() {
 
     const attr = getAttribution();
 
-    // gclid and timezone are STANDARD CRM fields: they go in formData under their standard keys.
-    // The key names "gclid" / "timezone" are assumed (not yet confirmed by a test): verify on the contact.
-    const formData: Record<string, unknown> = {
-      ...form,
-      ...(attr.gclid ? { gclid: attr.gclid } : {}),
-      ...(attr.timezone ? { timezone: attr.timezone } : {}),
-    };
     const formLabels: Record<string, string> = {
       first_name: "First Name",
       last_name: "Last Name",
       email: "Email",
       phone: "Phone",
-      ...(attr.gclid ? { gclid: "gclid" } : {}),
-      ...(attr.timezone ? { timezone: "Timezone" } : {}),
     };
 
-    const payload = buildTrackingPayload(FORM_ID, FORM_NAME, formData, formLabels);
+    const payload = buildTrackingPayload(FORM_ID, FORM_NAME, form, formLabels);
 
     // Attribution + device info travel as registered custom fields (ids in src/lib/crm-fields.ts).
     const customFields = buildCustomFields({
@@ -93,6 +84,8 @@ function LeadForm() {
       referrer: attr.referrer,
       device_type: attr.device_type,
       os: attr.os,
+      google_click_id: attr.gclid,
+      visitor_timezone: attr.timezone,
     });
 
     postTrackingEvent(payload, { customFields });

@@ -67,11 +67,11 @@ properties { deviceType, source: "ai_studio", projectId, formName }
 
 Ids live in `src/lib/crm-fields.ts`. Registered by AI Studio's AI, text type:
 `fbp`, `fbc`, `event_id`, `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`,
-`landing_page`, `referrer`, `device_type`, `os`.
+`landing_page`, `referrer`, `device_type`, `os`, `google_click_id`, `visitor_timezone`.
 
-**Standard CRM fields, NOT registrable** (registration returned a 400 / is refused): `gclid` and `timezone`.
-They must go in `formData` under their standard keys. **Open item:** confirm the exact standard key
-names with AI Studio's AI before sending them (a wrong key may be ignored, or could reject the event).
+**`gclid` / `timezone` clash with standard CRM fields.** Registering them returns a 400, and sending them in
+`formData` is silently ignored (tested: contact created, Time zone blank, no gclid). Workaround: registered as
+`google_click_id` and `visitor_timezone` (text) and sent through `customFields`.
 
 ## Client helpers (our code, safe to edit)
 

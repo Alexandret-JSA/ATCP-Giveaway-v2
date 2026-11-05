@@ -1,9 +1,9 @@
 // Custom field ids registered by AI Studio's `register_custom_field` (2026-11-05).
 // Needed by crm-tracking.ts `customFields`. If a field is re-registered, update its id here.
 //
-// NOT here on purpose:
-//  - gclid and timezone are STANDARD CRM fields (registration failed), so they go in `formData`
-//    under their standard keys, not through `customFields`. Confirm the exact key names first.
+// gclid and timezone clash with STANDARD CRM fields (registering them returns 400, and sending them in
+// formData is silently ignored), so they are registered under different names:
+// google_click_id and visitor_timezone.
 export const CRM_FIELD_IDS = {
   fbp: "98KSs0yFbb4arbvxDItE",
   fbc: "uipsq14WOPHhtydUiIRv",
@@ -17,6 +17,8 @@ export const CRM_FIELD_IDS = {
   referrer: "vZ6w6N8Zt9bac7s20hM8",
   device_type: "rVXRR2yvHMTEKgzEVR2C",
   os: "jTKLDPz9iM7Kv3Iu5p6f",
+  google_click_id: "d4jYBDLqOm41NVjJTJjX",
+  visitor_timezone: "U6ieKftRmVzR0LruJYyb",
 } as const;
 
 export type CrmFieldName = keyof typeof CRM_FIELD_IDS;
