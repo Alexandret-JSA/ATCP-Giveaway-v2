@@ -17,7 +17,7 @@ submit (EntryForm.tsx)
 | Piece | State | What unlocks it |
 |---|---|---|
 | CRM contact + tracking custom fields | **Working** (tested) | n/a |
-| 6 form-question custom fields | **Waiting for ids** | Paste the ids into `src/lib/crm-fields.ts` (they are `""` now; empty ids are skipped, so the answers are NOT saved until then) |
+| 6 form-question custom fields | **Registered and wired** (2026-11-05) | n/a (ids in `src/lib/crm-fields.ts`) |
 | GTM loader | **Off** | Set the real container id in `GTM_ID` (`src/lib/event-config.ts`) |
 | Meta Pixel (browser) | **Lives in GTM**, not in code | Build the tags below once the container exists |
 | Meta CAPI (server) | **Off** (`not_configured`) | Add Secrets `META_PIXEL_ID`, `META_CAPI_TOKEN` (and `META_TEST_EVENT_CODE` while testing) in AI Studio -> More -> Secrets |
