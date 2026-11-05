@@ -5,24 +5,60 @@ import { useEntriesClosed } from "@/lib/use-entries-closed";
 
 const COACHES = [
   {
-    name: "Joe Withledge",
-    spec: "Storm Response",
-    ask: "Storm response · Emergency work · Scaling",
+    name: "Joe Whitledge",
+    spec: "Emergency / Storm Response & Insurance Claims",
+    image:
+      "https://vibe.filesafe.space/1793888448858773605/attachments/78d722e8-0680-4ab8-b9a3-e5a5c47134c2.jpg",
+    brag: (
+      <>
+        Owner of Whitledge Tree Service and founder of Emergency Tree Responders. He has more than{" "}
+        <b>20 years of experience in tree service</b>, and his company has handled{" "}
+        <b>more than 100 emergency tree-removal claims in a single year</b>.
+      </>
+    ),
+    ask: "Storm response · Emergency work · Insurance claims & billing",
   },
   {
-    name: "Stefano LeBlanc",
-    spec: "Storm Work & Insurance Billing",
-    ask: "Insurance billing · Storm work · Getting paid",
+    name: "Stefano Devigili",
+    spec: "Scaling & Production Operations",
+    image:
+      "https://vibe.filesafe.space/1793888448858773605/attachments/11caf0ac-26a7-4bc5-be72-a3f9843883f1.png",
+    brag: (
+      <>
+        Co-owner and co-founder of Grant Brothers Tree Service.{" "}
+        <b>Grant Brothers grew to more than $1M in annual sales</b> within three years with a single
+        production crew.
+      </>
+    ),
+    ask: "Growing from 1 crew to $1M+ · High-efficiency production · Scaling",
   },
   {
     name: "Chad Hansen",
     spec: "Business Management & Finance",
-    ask: "Pricing · Cash flow · Managing the business",
+    image:
+      "https://vibe.filesafe.space/1793888448858773605/attachments/c8088706-1b6b-4f8c-9c36-b3df6e0074a4.jpg",
+    brag: (
+      <>
+        President of Hansen’s Tree Service & Environmental Resources. Expert on Business Management
+        & Financial Operations, especially KPIs, metrics, and using real data to manage a business.{" "}
+        <b>Hansen’s has more than 100 employees</b>.
+      </>
+    ),
+    ask: "Pricing · Cash flow · KPIs & data · Managing the business",
   },
   {
     name: "Alex Shy",
-    spec: "PHC & Operational Efficiency",
-    ask: "Plant health care · Systems · Crew efficiency",
+    spec: "Plant Health Care (PHC) & Operational Efficiency",
+    image:
+      "https://vibe.filesafe.space/1793888448858773605/attachments/442b54f7-ca33-4f78-8576-8dae16b8e246.jpg",
+    brag: (
+      <>
+        Expert on Plant Health Care (PHC) & Operational Efficiency. He has{" "}
+        <b>more than a decade of experience in arboriculture/PHC</b>; he founded Shy Tree in 2017
+        and later sold it. He also created Mobile Tree Spa and PHC Rx.
+      </>
+    ),
+    ask: "Plant health care services · Systems & tech · Crew efficiency",
   },
 ];
 
@@ -225,13 +261,14 @@ export function LandingV2() {
             </p>
             <div className="coachrow">
               <div className="faces" aria-hidden="true">
-                <Face />
-                <Face />
-                <Face />
-                <Face />
+                {COACHES.map((c) => (
+                  <span className="face" key={c.name}>
+                    <img src={c.image} alt={c.name} className="face-img" />
+                  </span>
+                ))}
               </div>
               <p className="micro">
-                Coached by Joe Withledge, Stefano LeBlanc, Chad Hansen and Alex Shy
+                Coached by Joe Whitledge, Stefano Devigili, Chad Hansen and Alex Shy
               </p>
             </div>
             <div className="logi">
@@ -341,11 +378,13 @@ export function LandingV2() {
           <div className="grid g4 coaches">
             {COACHES.map((c) => (
               <div className="card coach" key={c.name}>
-                <Face className="face photo" />
+                <div className="photo">
+                  <img src={c.image} alt={c.name} className="coach-img" />
+                </div>
                 <div className="meta">
                   <span className="spec">{c.spec}</span>
                   <h3 className="h3">{c.name}</h3>
-                  <p className="micro">7-figure tree service owner</p>
+                  <p className="micro brag">{c.brag}</p>
                   <p className="micro">
                     <b>Ask me about:</b> {c.ask}
                   </p>
@@ -509,10 +548,11 @@ export function LandingV2() {
         <div className="wrap split">
           <div className="hero-card">
             <div className="grid g4" aria-hidden="true">
-              <Face />
-              <Face />
-              <Face />
-              <Face />
+              {COACHES.map((c) => (
+                <div className="photo closing-photo" key={c.name}>
+                  <img src={c.image} alt={c.name} className="coach-img" />
+                </div>
+              ))}
             </div>
             <h2 className="h2">Sit Down With a 7-Figure Tree Service Owner</h2>
             <p className="p">
