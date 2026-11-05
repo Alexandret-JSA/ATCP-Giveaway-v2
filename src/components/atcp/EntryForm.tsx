@@ -18,9 +18,6 @@ type Values = {
   phone: string;
   email: string;
   atcp_member: string;
-  atcp_membership_email: string;
-  facebook_name: string;
-  fb_group_confirmed: boolean;
   fb_group_member: string;
   masterclass_topic: string;
 };
@@ -31,14 +28,12 @@ const EMPTY: Values = {
   phone: "",
   email: "",
   atcp_member: "",
-  atcp_membership_email: "",
-  facebook_name: "",
-  fb_group_confirmed: false,
   fb_group_member: "",
   masterclass_topic: "",
 };
 
 const CHOICES = ["Yes", "No", "Not sure"];
+const FB_GROUP_CHOICES = ["Yes", "I'm becoming a member ASAP", "Not sure"];
 
 function validate(v: Values): string | null {
   if (!v.first_name.trim() || !v.last_name.trim()) return "Please enter your first and last name.";
@@ -47,9 +42,7 @@ function validate(v: Values): string | null {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email.trim()))
     return "Please enter a valid email address.";
   if (!v.atcp_member) return "Please tell us whether you are an ATCP member.";
-  if (!v.facebook_name.trim()) return "Please enter your Facebook profile or group member name.";
   if (!v.fb_group_member) return "Please tell us whether you are in the ATCP Facebook group.";
-  if (!v.fb_group_confirmed) return "Please confirm your ATCP Facebook group membership.";
   if (!v.masterclass_topic.trim()) return "Please tell us what you would like to discuss.";
   return null;
 }
@@ -131,9 +124,6 @@ export function EntryForm({ anchorId, prefix }: { anchorId: string; prefix: stri
       google_click_id: attr.gclid,
       visitor_timezone: attr.timezone,
       atcp_member: v.atcp_member,
-      atcp_membership_email: v.atcp_membership_email.trim(),
-      facebook_name: v.facebook_name.trim(),
-      fb_group_confirmed: v.fb_group_confirmed ? "Yes" : "",
       fb_group_member: v.fb_group_member,
       masterclass_topic: v.masterclass_topic.trim(),
     });
@@ -237,23 +227,6 @@ export function EntryForm({ anchorId, prefix }: { anchorId: string; prefix: stri
             ))}
           </select>
         </Field>
-        <Field id={id("memail")} label="ATCP Membership Email (if applicable)">
-          <input
-            id={id("memail")}
-            name="atcp_membership_email"
-            type="email"
-            value={v.atcp_membership_email}
-            onChange={(e) => set("atcp_membership_email", e.target.value)}
-          />
-        </Field>
-        <Field id={id("fbname")} label="Facebook Profile or Group Member Name" required>
-          <input
-            id={id("fbname")}
-            name="facebook_name"
-            value={v.facebook_name}
-            onChange={(e) => set("facebook_name", e.target.value)}
-          />
-        </Field>
         <Field id={id("fbgroup")} label="Are you a member of the ATCP Facebook group?" required>
           <select
             id={id("fbgroup")}
@@ -265,25 +238,13 @@ export function EntryForm({ anchorId, prefix }: { anchorId: string; prefix: stri
             <option value="" disabled>
               Please select one
             </option>
-            {CHOICES.map((c) => (
+            {FB_GROUP_CHOICES.map((c) => (
               <option key={c} value={c}>
                 {c}
               </option>
             ))}
           </select>
         </Field>
-        <label className="f-check" htmlFor={id("confirm")}>
-          <input
-            id={id("confirm")}
-            name="fb_group_confirmed"
-            type="checkbox"
-            checked={v.fb_group_confirmed}
-            onChange={(e) => set("fb_group_confirmed", e.target.checked)}
-          />
-          <span>
-            I confirm that I am a member of the ATCP Facebook group <b>*</b>
-          </span>
-        </label>
         <Field
           id={id("topic")}
           label="What would you like to discuss during the personalized masterclass?"
