@@ -75,7 +75,7 @@ export function EntryFormV2({ anchorId, prefix }: { anchorId: string; prefix: st
       <div className="form-card" id={anchorId}>
         <h2 className="h3">Entries Are Closed</h2>
         <p className="p">
-          The 4 winners are drawn live on Fri, Nov 13 at 5:00 PM ET during our Discord town hall.
+          The winner is drawn live on Fri, Nov 13 at 5:00 PM ET during our Discord town hall.
         </p>
         <a className="btn" href={GROUP_URL} target="_blank" rel="noopener noreferrer">
           Join the Facebook Group Now

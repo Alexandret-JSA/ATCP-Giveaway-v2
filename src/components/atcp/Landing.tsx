@@ -164,16 +164,13 @@ const FAQ_LEFT = [
   ],
   [
     "How are the winners chosen?",
-    "The 4 winners are drawn at random, live on stream during our Discord town hall on Friday, November 13, 2026 at 5:00 PM ET. We call each winner live at the phone number on their entry, up to three times within 10 minutes. You must answer the call live to win; a voicemail or a text back does not count.",
+    "The winner is drawn at random, live on stream during our Discord town hall on Friday, November 13, 2026 at 5:00 PM ET. We call the winner live at the phone number on their entry, up to three times within 10 minutes. You must answer the call live to win; a voicemail or a text back does not count.",
   ],
   [
     "How many winners will there be?",
-    "Four. Each winner gets their own coach and their own 60-minute session.",
+    "One. The winner gets their own coach and their own 60-minute session.",
   ],
-  [
-    "Can I choose my coach?",
-    "Yes. Winners choose in draw order: the first winner drawn picks first, then the second, and so on.",
-  ],
+  ["Can I choose my coach?", "Yes. The winner chooses their coach."],
   [
     "When and how does the session happen?",
     "Sessions start Friday, November 20, 2026. Each one is a 60-minute, one-on-one live video call.",
@@ -184,7 +181,7 @@ const FAQ_RIGHT = [
   ["Will the session be recorded?", "Yes, every session is recorded."],
   [
     "Do I need to join the Facebook group?",
-    "Yes. Joining is free, and the winners are drawn from group members. You’ll get the link right after you enter.",
+    "Yes. Joining is free, and the winner is drawn from group members. You’ll get the link right after you enter.",
   ],
   [
     "How do bonus entries work?",
@@ -227,12 +224,12 @@ export function Landing() {
         <div className="wrap">
           {closed ? (
             <p>
-              <b>Entries are closed.</b> The 4 winners are drawn live on Fri, Nov 13 at 5:00 PM ET
+              <b>Entries are closed.</b> The winner is drawn live on Fri, Nov 13 at 5:00 PM ET
               during our Discord town hall.
             </p>
           ) : (
             <p>
-              <b>Free Giveaway:</b> Win 1 of 4 coaching sessions with 7-figure tree service owners
+              <b>Free Giveaway:</b> Win a coaching session with a 7-figure tree service owner
             </p>
           )}
           <Countdown label="Sessions start in" />
@@ -256,8 +253,7 @@ export function Landing() {
             <h1 className="h1">Win 1-on-1 Coaching With a 7-Figure Tree Service Owner</h1>
             <p className="p">
               Learn directly from the people who have already built the business you’re trying to
-              build. No generic advice. No guessing. Four winners, a private session each, and $0 to
-              enter.
+              build. No generic advice. No guessing. One winner, a private session, and $0 to enter.
             </p>
             <div className="coachrow">
               <div className="faces" aria-hidden="true">
@@ -277,7 +273,7 @@ export function Landing() {
                 <span>Thu, Nov 12 · 5:00 PM ET</span>
               </div>
               <div>
-                <small>Winners drawn</small>
+                <small>Winner drawn</small>
                 <span>Fri, Nov 13 · 5:00 PM ET</span>
               </div>
               <div>
@@ -294,8 +290,8 @@ export function Landing() {
       <section className="band green">
         <div className="wrap grid g4">
           <div className="stat">
-            <b>4</b>
-            <span>Winners</span>
+            <b>1</b>
+            <span>Winner</span>
           </div>
           <div className="stat">
             <b>60 min</b>
@@ -319,9 +315,8 @@ export function Landing() {
             <p className="eb">What You Can Win</p>
             <h2 className="h2">A Private 60-Minute Session Built Around Your Business</h2>
             <p className="p">
-              Each of the 4 winners gets their own coach: a tree service owner who has built and run
-              a 7-figure business. The first winner drawn picks their coach first, then the second,
-              and so on.
+              The winner gets their own coach: a tree service owner who has built and run a 7-figure
+              business.
             </p>
             <p className="p">
               Bring the question that matters most to you, from growth and sales to operations,
@@ -330,7 +325,7 @@ export function Landing() {
           </div>
           <div className="prize">
             <p className="prize-head">
-              <span>4 Winners</span>
+              <span>1 Winner</span>
               <span className="sep"> · </span>
               <span>4 Coaches</span>
             </p>
@@ -421,16 +416,15 @@ export function Landing() {
               <span className="n">2</span>
               <h3 className="h3">The Live Draw on Nov 13</h3>
               <p className="p">
-                The 4 winners are drawn live on stream during our Discord town hall on Friday,
-                November 13 at 5:00 PM ET.
+                The winner is drawn live on stream during our Discord town hall on Friday, November
+                13 at 5:00 PM ET.
               </p>
             </div>
             <div className="step">
               <span className="n">3</span>
               <h3 className="h3">Pick Your Coach and Meet</h3>
               <p className="p">
-                Winners choose their coach in draw order. The winner selects a time based on
-                availability.
+                The winner chooses their coach. The winner selects a time based on availability.
               </p>
             </div>
           </div>
@@ -438,7 +432,7 @@ export function Landing() {
           <div className="draw">
             <h3 className="h3">The Live Draw</h3>
             <p className="p">
-              The 4 winners will be drawn live on stream during our Discord town hall taking place
+              The winner will be drawn live on stream during our Discord town hall taking place
               Friday, November 13 at 5:00 PM ET.
             </p>
             <p className="p alert">You Must Answer Your Phone to Win</p>
@@ -557,8 +551,8 @@ export function Landing() {
             <h2 className="h2">Sit Down With a 7-Figure Tree Service Owner</h2>
             <p className="p">
               Entries close Thursday, November 12 at 5:00 PM ET. You’ll get a confirmation email
-              right away, and the 4 winners are drawn live on November 13. Keep your phone close:
-              you must answer to win.
+              right away, and the winner is drawn live on November 13. Keep your phone close: you
+              must answer to win.
             </p>
           </div>
           <EntryForm anchorId="enter-2" prefix="f2" />

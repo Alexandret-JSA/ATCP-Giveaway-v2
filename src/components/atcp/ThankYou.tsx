@@ -69,7 +69,7 @@ export function ThankYou() {
             <h1 className="h1">You’re Almost Done</h1>
             <p className="p">
               Your entry is saved. The last step to guarantee your seat in the draw: the ATCP
-              Facebook group. That’s where we go live, call out the winners and share every update.
+              Facebook group. That’s where we go live, call out the winner and share every update.
               If you’re not in the group, there’s no way to know you’ve won.
             </p>
           </div>
@@ -89,8 +89,8 @@ export function ThankYou() {
                 <span className="tag">Required to win</span>
                 <h2 className="h3">Join the ATCP Facebook Group</h2>
                 <p className="p">
-                  The 4 winners are drawn from group members, live on Friday, November 13 at 5:00 PM
-                  ET. Keep your phone close: we call each winner live, and you must answer to win.
+                  The winner is drawn from group members, live on Friday, November 13 at 5:00 PM ET.
+                  Keep your phone close: we call the winner live, and you must answer to win.
                 </p>
               </div>
               <div className="act">
