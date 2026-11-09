@@ -8,7 +8,7 @@ const COACHES = [
     name: "Joe Whitledge",
     spec: "Emergency / Storm Response & Insurance Claims",
     image:
-      "https://vibe.filesafe.space/1793888448858773605/attachments/78d722e8-0680-4ab8-b9a3-e5a5c47134c2.jpg",
+      "https://vibe.filesafe.space/1793888448858773605/attachments/2464dc04-ee59-44f0-a07b-7466781f57e0.png",
     brag: (
       <>
         Owner of Whitledge Tree Service and founder of Emergency Tree Responders. He has more than{" "}
@@ -22,7 +22,7 @@ const COACHES = [
     name: "Stefano Devigili",
     spec: "Scaling & Production Operations",
     image:
-      "https://vibe.filesafe.space/1793888448858773605/attachments/11caf0ac-26a7-4bc5-be72-a3f9843883f1.png",
+      "https://vibe.filesafe.space/1793888448858773605/attachments/9452f235-d7b6-4892-a6f0-b70bfe0e5548.png",
     brag: (
       <>
         Co-owner and co-founder of Grant Brothers Tree Service.{" "}
@@ -36,7 +36,7 @@ const COACHES = [
     name: "Chad Hansen",
     spec: "Business Management & Finance",
     image:
-      "https://vibe.filesafe.space/1793888448858773605/attachments/c8088706-1b6b-4f8c-9c36-b3df6e0074a4.jpg",
+      "https://vibe.filesafe.space/1793888448858773605/attachments/0e7e60f2-c437-49af-b155-67b81a8e8b4d.png",
     brag: (
       <>
         President of Hansen’s Tree Service & Environmental Resources. Expert on Business Management
@@ -50,7 +50,7 @@ const COACHES = [
     name: "Alex Shy",
     spec: "Plant Health Care (PHC) & Operational Efficiency",
     image:
-      "https://vibe.filesafe.space/1793888448858773605/attachments/442b54f7-ca33-4f78-8576-8dae16b8e246.jpg",
+      "https://vibe.filesafe.space/1793888448858773605/attachments/fb7fae13-a175-49e7-b9f9-276afea702b3.png",
     brag: (
       <>
         Expert on Plant Health Care (PHC) & Operational Efficiency. He has{" "}
