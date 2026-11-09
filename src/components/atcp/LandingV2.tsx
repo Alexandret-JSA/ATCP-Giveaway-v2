@@ -35,7 +35,7 @@ const COACHES = [
     name: "Chad Hansen",
     spec: "Business Management & Finance",
     image:
-      "https://vibe.filesafe.space/1793888448858773605/attachments/0e7e60f2-c437-49af-b155-67b81a8e8b4d.png",
+      "https://vibe.filesafe.space/1793888448858773605/attachments/f6d94a9d-91ad-43d2-b574-aa587cad37b8.png",
     brag: (
       <>
         President of Hansen’s Tree Service & Environmental Resources. Expert on Business Management
