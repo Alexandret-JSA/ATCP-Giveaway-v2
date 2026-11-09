@@ -8,7 +8,7 @@ const COACHES = [
     name: "Joe Whitledge",
     spec: "Emergency / Storm Response & Insurance Claims",
     image:
-      "https://vibe.filesafe.space/1793888448858773605/attachments/2464dc04-ee59-44f0-a07b-7466781f57e0.png",
+      "https://vibe.filesafe.space/1793888448858773605/attachments/7d7e5e2a-5e7e-4d2a-a2ad-fc1c437ffa67.png",
     brag: (
       <>
         Owner of Whitledge Tree Service and founder of Emergency Tree Responders. He has more than{" "}
