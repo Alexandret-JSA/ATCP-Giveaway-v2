@@ -19,18 +19,17 @@ const COACHES = [
     ask: "Storm response · Emergency work · Insurance claims & billing",
   },
   {
-    name: "Stefano Devigili",
-    spec: "Scaling & Production Operations",
+    name: "Stephan LeBlanc",
+    spec: "Insurance Billing & Emergency Tree Work",
     image:
-      "https://vibe.filesafe.space/1793888448858773605/attachments/9452f235-d7b6-4892-a6f0-b70bfe0e5548.png",
+      "https://vibe.filesafe.space/1793888448858773605/attachments/938b932b-1faa-45f7-9e79-1abe10b9dbd7.png",
     brag: (
       <>
-        Co-owner and co-founder of Grant Brothers Tree Service.{" "}
-        <b>Grant Brothers grew to more than $1M in annual sales</b> within three years with a single
-        production crew.
+        Licensed Public Adjuster with Eugene Darby. Expert on{" "}
+        <b>storm work and emergency billing involving insurance companies</b>.
       </>
     ),
-    ask: "Growing from 1 crew to $1M+ · High-efficiency production · Scaling",
+    ask: "Storm work · Emergency billing · Navigating insurance claims",
   },
   {
     name: "Chad Hansen",
@@ -66,7 +65,7 @@ const TOPICS = [
   {
     title: "Storm & Emergency Response",
     text: "Win more storm work and run emergency jobs safely and profitably.",
-    coach: "Joe Withledge, Stefano LeBlanc",
+    coach: "Joe Whitledge, Stephan LeBlanc",
     icon: (
       <>
         <path d="M7 16.5a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9a3.75 3.75 0 0 1 .5 7.47" />
@@ -77,7 +76,7 @@ const TOPICS = [
   {
     title: "Insurance Billing",
     text: "Get paid faster on insurance jobs and stop leaving money on the table.",
-    coach: "Stefano LeBlanc",
+    coach: "Stephan LeBlanc",
     icon: (
       <>
         <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" />
@@ -264,7 +263,7 @@ export function LandingV2() {
                 ))}
               </div>
               <p className="micro">
-                Coached by Joe Whitledge, Stefano Devigili, Chad Hansen and Alex Shy
+                Coached by Joe Whitledge, Stephan LeBlanc, Chad Hansen and Alex Shy
               </p>
             </div>
             <div className="logi">
