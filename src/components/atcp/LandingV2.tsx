@@ -5,13 +5,13 @@ import { useEntriesClosed } from "@/lib/use-entries-closed";
 
 const COACHES = [
   {
-    name: "Joe Whitledge",
+    name: "Joe Withledge",
     spec: "Emergency / Storm Response & Insurance Claims",
     image:
       "https://vibe.filesafe.space/1793888448858773605/attachments/7d7e5e2a-5e7e-4d2a-a2ad-fc1c437ffa67.png",
     brag: (
       <>
-        Owner of Whitledge Tree Service and founder of Emergency Tree Responders. He has more than{" "}
+        Owner of Withledge Tree Service and founder of Emergency Tree Responders. He has more than{" "}
         <b>20 years of experience in tree service</b>, and his company has handled{" "}
         <b>more than 100 emergency tree-removal claims in a single year</b>.
       </>
@@ -65,7 +65,7 @@ const TOPICS = [
   {
     title: "Storm & Emergency Response",
     text: "Win more storm work and run emergency jobs safely and profitably.",
-    coach: "Joe Whitledge, Stephan LeBlanc",
+    coach: "Joe Withledge, Stephan LeBlanc",
     icon: (
       <>
         <path d="M7 16.5a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9a3.75 3.75 0 0 1 .5 7.47" />
@@ -263,7 +263,7 @@ export function LandingV2() {
                 ))}
               </div>
               <p className="micro">
-                Coached by Joe Whitledge, Stephan LeBlanc, Chad Hansen and Alex Shy
+                Coached by Joe Withledge, Stephan LeBlanc, Chad Hansen and Alex Shy
               </p>
             </div>
             <div className="logi">
