@@ -65,8 +65,8 @@ export function Footer() {
         </p>
         <p>
           No purchase necessary. Open to tree care professionals; see the Official Rules for age and
-          location requirements. Entries close November 12, 2026 at 5:00 PM ET. One winner will be
-          drawn on November 13, 2026.
+          location requirements. Entries close December 14, 2026 at 5:00 PM ET. One winner will be
+          drawn on December 15, 2026.
         </p>
         <p>
           This site is not part of Facebook or Meta Platforms, Inc. and is not endorsed by Facebook

@@ -89,8 +89,8 @@ export function ThankYou() {
                 <span className="tag">Required to win</span>
                 <h2 className="h3">Join the ATCP Facebook Group</h2>
                 <p className="p">
-                  The winner is drawn from group members, live on Friday, November 13 at 5:00 PM ET.
-                  Keep your phone close: we call the winner live, and you must answer to win.
+                  The winner is drawn from group members, live on Tuesday, December 15 at 5:00 PM
+                  ET. Keep your phone close: we call the winner live, and you must answer to win.
                 </p>
               </div>
               <div className="act">
@@ -119,8 +119,8 @@ export function ThankYou() {
                 <span className="tag">No limit</span>
                 <h2 className="h3">Get 1 Extra Entry for Every Friend Who Joins</h2>
                 <p className="p">
-                  Tap “Invite Friends” inside the group. Every friend who joins before Thursday,
-                  November 12 at 5:00 PM ET gives you one extra entry.
+                  Tap “Invite Friends” inside the group. Every friend who joins before Monday,
+                  December 14 at 5:00 PM ET gives you one extra entry.
                 </p>
               </div>
               <div className="act">

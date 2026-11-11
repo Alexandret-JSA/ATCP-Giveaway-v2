@@ -27,6 +27,7 @@ export const CRM_FIELD_IDS = {
   fb_group_confirmed: "6CGlxIIbKI0mMRXUL6Kg",
   fb_group_member: "k3rk0WmePDpl3Z9Pfu0X",
   masterclass_topic: "dNFyzm76fg4fGpN18hJx",
+  preferred_coach: "gbt2h6iMoJlv9YqFwKHt",
 } as const;
 
 export type CrmFieldName = keyof typeof CRM_FIELD_IDS;

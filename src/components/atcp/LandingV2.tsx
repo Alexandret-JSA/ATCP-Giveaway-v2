@@ -163,7 +163,7 @@ const FAQ_LEFT = [
   ],
   [
     "How are the winners chosen?",
-    "The winner is drawn at random, live on stream during our Discord town hall on Friday, November 13, 2026 at 5:00 PM ET. We call the winner live at the phone number on their entry, up to three times within 10 minutes, You must answer the call live to win; a voicemail or a text back does not count.",
+    "The winner is drawn at random, live on stream during our Discord town hall on Tuesday, December 15, 2026 at 5:00 PM ET. We call the winner live at the phone number on their entry, up to three times within 10 minutes, You must answer the call live to win; a voicemail or a text back does not count.",
   ],
   [
     "How many winners will there be?",
@@ -172,7 +172,7 @@ const FAQ_LEFT = [
   ["Can I choose my coach?", "Yes. The winner chooses their coach."],
   [
     "When and how does the session happen?",
-    "Sessions start Friday, November 20, 2026. Each one is a 60-minute, one-on-one live video call.",
+    "The winner chooses their coach. The winner selects a time based on availability.",
   ],
 ] as const;
 
@@ -184,7 +184,7 @@ const FAQ_RIGHT = [
   ],
   [
     "How do bonus entries work?",
-    "Inside the group, use the “Invite Friends” button. Every person you invite who joins before November 12 at 5:00 PM ET gives you one extra entry, There is absolutely no limit on bonus entries.",
+    "Inside the group, use the “Invite Friends” button. Every person you invite who joins before December 14 at 5:00 PM ET gives you one extra entry, There is absolutely no limit on bonus entries.",
   ],
   ["Do I need to be an ATCP member?", "No. Anyone in the tree care industry can enter."],
   [
@@ -223,7 +223,7 @@ export function LandingV2() {
         <div className="wrap">
           {closed ? (
             <p>
-              <b>Entries are closed.</b> The winner is drawn live on Fri, Nov 13 at 5:00 PM ET
+              <b>Entries are closed.</b> The winner is drawn live on Tue, Dec 15 at 5:00 PM ET
               during our Discord town hall.
             </p>
           ) : (
@@ -231,7 +231,7 @@ export function LandingV2() {
               <b>Free Giveaway:</b> Win a coaching session with a 7-figure tree service owner
             </p>
           )}
-          <Countdown label="Sessions start in" />
+          <Countdown label="Entries close in" />
           <Cta className="btn sm only-d" />
         </div>
       </div>
@@ -269,11 +269,11 @@ export function LandingV2() {
             <div className="logi">
               <div>
                 <small>Entries close</small>
-                <span>Thu, Nov 12 · 5:00 PM ET</span>
+                <span>Mon, Dec 14 · 5:00 PM ET</span>
               </div>
               <div>
                 <small>Winner drawn</small>
-                <span>Fri, Nov 13 · 5:00 PM ET</span>
+                <span>Tue, Dec 15 · 5:00 PM ET</span>
               </div>
               <div>
                 <small>Session</small>
@@ -389,7 +389,7 @@ export function LandingV2() {
           <div className="gap" />
           <div className="cta">
             <Cta className="btn big" />
-            <Countdown label="Sessions start in" />
+            <Countdown label="Entries close in" />
           </div>
         </div>
       </section>
@@ -413,10 +413,10 @@ export function LandingV2() {
             </div>
             <div className="step">
               <span className="n">2</span>
-              <h3 className="h3">The Live Draw on Nov 13</h3>
+              <h3 className="h3">The Live Draw on Dec 15</h3>
               <p className="p">
-                The winner is drawn live on stream during our Discord town hall on Friday, November
-                13 at 5:00 PM ET.
+                The winner is drawn live on stream during our Discord town hall on Tuesday, December
+                15 at 5:00 PM ET.
               </p>
             </div>
             <div className="step">
@@ -432,7 +432,7 @@ export function LandingV2() {
             <h3 className="h3">The Live Draw</h3>
             <p className="p">
               The winner will be drawn live on stream during our Discord town hall taking place
-              Friday, November 13 at 5:00 PM ET.
+              Tuesday, December 15 at 5:00 PM ET.
             </p>
             <p className="p alert">You Must Answer Your Phone to Win</p>
             <ul className="chk">
@@ -488,7 +488,7 @@ export function LandingV2() {
               <li>You work in tree care: owner, employee, contractor, climber or crew lead.</li>
               <li>You want to grow a tree business, or start your own.</li>
               <li>You want answers from someone who has done it, not theory.</li>
-              <li>You can join a 60-minute video call from November 20.</li>
+              <li>You can join a 60-minute video call any time after the draw.</li>
             </ul>
           </div>
           <div className="card no">
@@ -496,7 +496,7 @@ export function LandingV2() {
             <ul className="chk x">
               <li>You’re looking for someone to do the work for you.</li>
               <li>You don’t work in the tree care industry.</li>
-              <li>You can’t join a video call from November 20.</li>
+              <li>You can’t join a video call after the draw.</li>
             </ul>
           </div>
         </div>
@@ -549,9 +549,9 @@ export function LandingV2() {
             </div>
             <h2 className="h2">Sit Down With a 7-Figure Tree Service Owner</h2>
             <p className="p">
-              Entries close Thursday, November 12 at 5:00 PM ET. You’ll get a confirmation email
-              right away, and the winner is drawn live on November 13. Keep your phone close: you
-              must answer to win.
+              Entries close Monday, December 14 at 5:00 PM ET. You’ll get a confirmation email right
+              away, and the winner is drawn live on December 15. Keep your phone close: you must
+              answer to win.
             </p>
           </div>
           <EntryFormV2 anchorId="enter-2" prefix="f2" />

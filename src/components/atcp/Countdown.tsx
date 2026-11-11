@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { SESSIONS_START } from "@/lib/event-config";
+import { ENTRIES_CLOSE } from "@/lib/event-config";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -23,14 +23,14 @@ export function Countdown({ label }: { label?: string }) {
   const [t, setT] = useState(() => split(0));
 
   useEffect(() => {
-    const tick = () => setT(split(SESSIONS_START - Date.now()));
+    const tick = () => setT(split(ENTRIES_CLOSE - Date.now()));
     tick();
     const id = window.setInterval(tick, 1000);
     return () => window.clearInterval(id);
   }, []);
 
   return (
-    <div className="cd" role="timer" aria-label="Time until the sessions start">
+    <div className="cd" role="timer" aria-label="Time until entries close">
       {label ? <small>{label}</small> : null}
       <b>{pad(t.d)}</b>
       <i>d</i>
