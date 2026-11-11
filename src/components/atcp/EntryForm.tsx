@@ -19,7 +19,6 @@ type Values = {
   email: string;
   atcp_member: string;
   fb_group_member: string;
-  preferred_coach: string;
   masterclass_topic: string;
 };
 
@@ -30,19 +29,11 @@ const EMPTY: Values = {
   email: "",
   atcp_member: "",
   fb_group_member: "",
-  preferred_coach: "",
   masterclass_topic: "",
 };
 
 const CHOICES = ["Yes", "No", "Not sure"];
 const FB_GROUP_CHOICES = ["Yes", "I'm becoming a member ASAP", "Not sure"];
-const COACH_OPTIONS = [
-  "No preference",
-  "Joe Withledge",
-  "Stephan LeBlanc",
-  "Chad Hansen",
-  "Alex Shy",
-];
 
 function validate(v: Values): string | null {
   if (!v.first_name.trim() || !v.last_name.trim()) return "Please enter your first and last name.";
@@ -134,7 +125,6 @@ export function EntryForm({ anchorId, prefix }: { anchorId: string; prefix: stri
       visitor_timezone: attr.timezone,
       atcp_member: v.atcp_member,
       fb_group_member: v.fb_group_member,
-      preferred_coach: v.preferred_coach,
       masterclass_topic: v.masterclass_topic.trim(),
     });
     postTrackingEvent(payload, { customFields });
@@ -249,24 +239,6 @@ export function EntryForm({ anchorId, prefix }: { anchorId: string; prefix: stri
               Please select one
             </option>
             {FB_GROUP_CHOICES.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
-        </Field>
-        <Field id={id("coach")} label="Which coach would you prefer?" required>
-          <select
-            id={id("coach")}
-            name="preferred_coach"
-            required
-            value={v.preferred_coach}
-            onChange={(e) => set("preferred_coach", e.target.value)}
-          >
-            <option value="" disabled>
-              Please select one
-            </option>
-            {COACH_OPTIONS.map((c) => (
               <option key={c} value={c}>
                 {c}
               </option>

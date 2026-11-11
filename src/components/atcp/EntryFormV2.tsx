@@ -22,7 +22,6 @@ type Values = {
   facebook_name: string;
   fb_group_member: string;
   fb_group_confirmed: boolean;
-  preferred_coach: string;
   masterclass_topic: string;
 };
 
@@ -36,19 +35,11 @@ const EMPTY: Values = {
   facebook_name: "",
   fb_group_member: "",
   fb_group_confirmed: false,
-  preferred_coach: "",
   masterclass_topic: "",
 };
 
 const CHOICES = ["Yes", "No", "Not sure"];
 const FB_GROUP_CHOICES = ["Yes", "No", "Not sure"];
-const COACH_OPTIONS = [
-  "No preference",
-  "Joe Withledge",
-  "Stephan LeBlanc",
-  "Chad Hansen",
-  "Alex Shy",
-];
 
 function validate(v: Values): string | null {
   if (!v.first_name.trim() || !v.last_name.trim()) return "Please enter your first and last name.";
@@ -147,7 +138,6 @@ export function EntryFormV2({ anchorId, prefix }: { anchorId: string; prefix: st
       facebook_name: v.facebook_name.trim(),
       fb_group_member: v.fb_group_member,
       fb_group_confirmed: v.fb_group_confirmed ? "Yes" : "No",
-      preferred_coach: v.preferred_coach,
       masterclass_topic: v.masterclass_topic.trim(),
     });
     postTrackingEvent(payload, { customFields });
@@ -300,24 +290,6 @@ export function EntryFormV2({ anchorId, prefix }: { anchorId: string; prefix: st
             I confirm my ATCP Facebook group membership <b>*</b>
           </span>
         </label>
-        <Field id={id("coach")} label="Which coach would you prefer?" required>
-          <select
-            id={id("coach")}
-            name="preferred_coach"
-            required
-            value={v.preferred_coach}
-            onChange={(e) => set("preferred_coach", e.target.value)}
-          >
-            <option value="" disabled>
-              Please select one
-            </option>
-            {COACH_OPTIONS.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
-        </Field>
         <Field
           id={id("topic")}
           label="What would you like to discuss during the personalized masterclass?"
